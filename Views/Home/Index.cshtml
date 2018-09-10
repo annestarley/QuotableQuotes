@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using QuotableQuotes.Models
+@model QuotableQuotes.Models.Quotes
+
+<h1>Welcome to QuotableQuotes</h1>
+<form asp-action="Create" asp-controller="Home" method="post" id="new-quote">
+    <div class="your-name">
+        <span asp-validation-for="YourName"></span>
+        <label asp-for="YourName"></label>
+        <input asp-for="YourName">
+    </div>
+    <div class="your-quote">
+        <span asp-validation-for="YourQuote"></span>
+        <label asp-for="YourQuote" style="vertical-align:top;"></label>
+        <textarea asp-for="YourQuote"></textarea>
+    </div>
+    <div class="button-container">
+        <button type="submit">Add my quote!</button>
+        <button><a href="~/quotes">Skip to quotes!</a></button>
+    </div>
+</form>
